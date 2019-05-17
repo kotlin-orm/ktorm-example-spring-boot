@@ -1,0 +1,11 @@
+
+logging:
+  level:
+    root: error
+    me.liuwj.ktorm: debug
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ktorm-example
+    username: root
+    password:
