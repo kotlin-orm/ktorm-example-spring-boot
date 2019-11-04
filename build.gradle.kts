@@ -12,7 +12,6 @@ version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
-    mavenLocal()
     mavenCentral()
 }
 
@@ -22,9 +21,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("me.liuwj.ktorm:ktorm-core:2.5")
-    implementation("me.liuwj.ktorm:ktorm-jackson:2.5")
-    implementation("me.liuwj.ktorm:ktorm-support-mysql:2.5")
+    implementation("me.liuwj.ktorm:ktorm-core:2.6")
+    implementation("me.liuwj.ktorm:ktorm-jackson:2.6")
+    implementation("me.liuwj.ktorm:ktorm-support-mysql:2.6")
     implementation("mysql:mysql-connector-java:8.0.13")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
