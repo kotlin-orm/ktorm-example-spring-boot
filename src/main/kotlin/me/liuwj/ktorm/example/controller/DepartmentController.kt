@@ -1,10 +1,11 @@
 package me.liuwj.ktorm.example.controller
 
-import me.liuwj.ktorm.entity.add
-import me.liuwj.ktorm.entity.findAll
-import me.liuwj.ktorm.entity.findById
+import me.liuwj.ktorm.database.Database
+import me.liuwj.ktorm.dsl.eq
+import me.liuwj.ktorm.entity.*
 import me.liuwj.ktorm.example.dao.Departments
 import me.liuwj.ktorm.example.model.Department
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -15,15 +16,17 @@ import org.springframework.web.bind.annotation.RestController
  */
 @RestController
 class DepartmentController {
+    @Autowired
+    lateinit var database: Database
 
     @GetMapping("/departments/get-by-id")
     fun getDepartmentById(@RequestParam("id") id: Int): Department? {
-        return Departments.findById(id)
+        return database.sequenceOf(Departments).find { it.id eq id }
     }
 
     @GetMapping("/departments/get-all")
     fun getAllDepartments(): List<Department> {
-        return Departments.findAll()
+        return database.sequenceOf(Departments).toList()
     }
 
     @PostMapping("/departments/create")
@@ -34,7 +37,7 @@ class DepartmentController {
         val department = Department()
         department.name = name
         department.location = location
-        Departments.add(department)
+        database.sequenceOf(Departments).add(department)
         return department
     }
 }

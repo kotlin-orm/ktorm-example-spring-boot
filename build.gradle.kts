@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.1.5.RELEASE"
     id("io.spring.dependency-management") version "0.6.0.RELEASE"
-    kotlin("jvm") version "1.3.40"
-    kotlin("plugin.spring") version "1.3.40"
+    kotlin("jvm") version "1.3.60"
+    kotlin("plugin.spring") version "1.3.60"
 }
 
 group = "me.liuwj.ktorm"
@@ -21,9 +21,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("me.liuwj.ktorm:ktorm-core:2.6")
-    implementation("me.liuwj.ktorm:ktorm-jackson:2.6")
-    implementation("me.liuwj.ktorm:ktorm-support-mysql:2.6")
+    implementation("me.liuwj.ktorm:ktorm-core:2.7")
+    implementation("me.liuwj.ktorm:ktorm-jackson:2.7")
+    implementation("me.liuwj.ktorm:ktorm-support-mysql:2.7")
     implementation("mysql:mysql-connector-java:8.0.13")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

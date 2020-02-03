@@ -1,9 +1,11 @@
 package me.liuwj.ktorm.example.controller
 
+import me.liuwj.ktorm.database.Database
 import me.liuwj.ktorm.dsl.eq
 import me.liuwj.ktorm.entity.*
 import me.liuwj.ktorm.example.dao.Employees
 import me.liuwj.ktorm.example.model.Employee
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
@@ -13,10 +15,12 @@ import org.springframework.web.bind.annotation.RestController
  */
 @RestController
 class EmployeeController {
+    @Autowired
+    lateinit var database: Database
 
     @GetMapping("/employees/get-by-id")
     fun getEmployeeById(@RequestParam("id") id: Int): Employee? {
-        return Employees.findById(id)
+        return database.sequenceOf(Employees).find { it.id eq id }
     }
 
     data class Page<T>(
@@ -34,8 +38,8 @@ class EmployeeController {
         @RequestParam("offset") offset: Int,
         @RequestParam("limit") limit: Int
     ): Page<Employee> {
-        val employees = Employees
-            .asSequence()
+        val employees = database
+            .sequenceOf(Employees)
             .filter { it.departmentId eq departmentId }
             .drop(offset)
             .take(limit)
@@ -45,8 +49,8 @@ class EmployeeController {
 
     @GetMapping("/employees/average-salaries")
     fun getAverageSalaries(): Map<Int?, Double?> {
-        return Employees
-            .asSequence()
+        return database
+            .sequenceOf(Employees)
             .groupingBy { it.departmentId }
             .eachAverageBy { it.salary }
     }
