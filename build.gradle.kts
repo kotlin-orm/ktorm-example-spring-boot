@@ -21,9 +21,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("me.liuwj.ktorm:ktorm-core:2.7.2")
-    implementation("me.liuwj.ktorm:ktorm-jackson:2.7.2")
-    implementation("me.liuwj.ktorm:ktorm-support-mysql:2.7.2")
+    implementation("me.liuwj.ktorm:ktorm-core:3.0.0")
+    implementation("me.liuwj.ktorm:ktorm-jackson:3.0.0")
+    implementation("me.liuwj.ktorm:ktorm-support-mysql:3.0.0")
     implementation("mysql:mysql-connector-java:8.0.13")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
