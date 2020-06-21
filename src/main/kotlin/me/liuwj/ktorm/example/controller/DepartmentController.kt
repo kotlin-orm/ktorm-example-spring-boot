@@ -2,8 +2,10 @@ package me.liuwj.ktorm.example.controller
 
 import me.liuwj.ktorm.database.Database
 import me.liuwj.ktorm.dsl.eq
-import me.liuwj.ktorm.entity.*
-import me.liuwj.ktorm.example.dao.Departments
+import me.liuwj.ktorm.entity.add
+import me.liuwj.ktorm.entity.find
+import me.liuwj.ktorm.entity.toList
+import me.liuwj.ktorm.example.dao.departments
 import me.liuwj.ktorm.example.model.Department
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
@@ -21,12 +23,12 @@ class DepartmentController {
 
     @GetMapping("/departments/get-by-id")
     fun getDepartmentById(@RequestParam("id") id: Int): Department? {
-        return database.sequenceOf(Departments).find { it.id eq id }
+        return database.departments.find { it.id eq id }
     }
 
     @GetMapping("/departments/get-all")
     fun getAllDepartments(): List<Department> {
-        return database.sequenceOf(Departments).toList()
+        return database.departments.toList()
     }
 
     @PostMapping("/departments/create")
@@ -37,7 +39,7 @@ class DepartmentController {
         val department = Department()
         department.name = name
         department.location = location
-        database.sequenceOf(Departments).add(department)
+        database.departments.add(department)
         return department
     }
 }
