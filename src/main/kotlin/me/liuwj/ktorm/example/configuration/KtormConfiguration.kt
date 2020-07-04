@@ -16,11 +16,18 @@ class KtormConfiguration {
     @Autowired
     lateinit var dataSource: DataSource
 
+    /**
+     * Register the [Database] instance as a Spring bean.
+     */
     @Bean
     fun database(): Database {
         return Database.connectWithSpringSupport(dataSource)
     }
 
+    /**
+     * Register Ktorm's Jackson extension to the Spring's container
+     * so that we can serialize/deserialize Ktorm entities.
+     */
     @Bean
     fun ktormModule(): Module {
         return KtormModule()

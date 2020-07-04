@@ -5,8 +5,8 @@ import me.liuwj.ktorm.dsl.eq
 import me.liuwj.ktorm.entity.add
 import me.liuwj.ktorm.entity.find
 import me.liuwj.ktorm.entity.toList
-import me.liuwj.ktorm.example.dao.departments
 import me.liuwj.ktorm.example.model.Department
+import me.liuwj.ktorm.example.model.departments
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
