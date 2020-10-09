@@ -1,10 +1,10 @@
-package me.liuwj.ktorm.example.controller
+package org.ktorm.example.controller
 
-import me.liuwj.ktorm.example.model.Employee
-import me.liuwj.ktorm.example.model.employees
 import org.ktorm.database.Database
 import org.ktorm.dsl.eq
 import org.ktorm.entity.*
+import org.ktorm.example.model.Employee
+import org.ktorm.example.model.employees
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam

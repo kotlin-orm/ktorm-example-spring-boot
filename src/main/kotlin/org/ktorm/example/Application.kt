@@ -1,4 +1,4 @@
-package me.liuwj.ktorm.example
+package org.ktorm.example
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

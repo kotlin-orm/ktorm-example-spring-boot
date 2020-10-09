@@ -6,7 +6,7 @@ plugins {
     kotlin("plugin.spring") version "1.4.10"
 }
 
-group = "me.liuwj.ktorm"
+group = "org.ktorm"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 

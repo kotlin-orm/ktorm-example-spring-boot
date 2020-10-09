@@ -2,7 +2,7 @@
 logging:
   level:
     root: error
-    me.liuwj.ktorm: debug
+    org.ktorm: debug
 
 spring:
   datasource:

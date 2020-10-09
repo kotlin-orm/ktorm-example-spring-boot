@@ -1,12 +1,12 @@
-package me.liuwj.ktorm.example.controller
+package org.ktorm.example.controller
 
-import me.liuwj.ktorm.example.model.Department
-import me.liuwj.ktorm.example.model.departments
 import org.ktorm.database.Database
 import org.ktorm.dsl.eq
 import org.ktorm.entity.add
 import org.ktorm.entity.find
 import org.ktorm.entity.toList
+import org.ktorm.example.model.Department
+import org.ktorm.example.model.departments
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping

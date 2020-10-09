@@ -1,4 +1,4 @@
-package me.liuwj.ktorm.example.configuration
+package org.ktorm.example.configuration
 
 import com.fasterxml.jackson.databind.Module
 import org.ktorm.database.Database

@@ -1,4 +1,4 @@
-package me.liuwj.ktorm.example.model
+package org.ktorm.example.model
 
 import org.ktorm.database.Database
 import org.ktorm.entity.Entity
