@@ -11,7 +11,7 @@ version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
-    maven(url = "https://maven.aliyun.com/repository/public")
+    mavenCentral()
 }
 
 dependencies {
@@ -20,9 +20,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("me.liuwj.ktorm:ktorm-core:3.1.0")
-    implementation("me.liuwj.ktorm:ktorm-jackson:3.1.0")
-    implementation("me.liuwj.ktorm:ktorm-support-mysql:3.1.0")
+    implementation("org.ktorm:ktorm-core:3.2.0")
+    implementation("org.ktorm:ktorm-jackson:3.2.0")
+    implementation("org.ktorm:ktorm-support-mysql:3.2.0")
     implementation("mysql:mysql-connector-java:8.0.13")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
