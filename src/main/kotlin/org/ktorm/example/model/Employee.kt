@@ -90,6 +90,6 @@ object Employees : Table<Employee>("t_employee") {
 }
 
 /**
- * Return a default entity sequence of [Departments].
+ * Return a default entity sequence of [Employees].
  */
 val Database.employees get() = this.sequenceOf(Employees)
