@@ -6,8 +6,9 @@ import org.ktorm.entity.*
 import org.ktorm.example.model.Employee
 import org.ktorm.example.model.employees
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.*
-import java.time.LocalDate
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.RestController
 
 /**
  * Created by vince on May 17, 2019.
@@ -50,10 +51,5 @@ class EmployeeController {
         return database.employees
             .groupingBy { it.departmentId }
             .eachAverageBy { it.salary }
-    }
-
-    @GetMapping("/test")
-    fun test(e: Employee): Employee {
-        return e
     }
 }
