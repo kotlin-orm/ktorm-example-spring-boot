@@ -1,4 +1,3 @@
-
 create database `ktorm-example`;
 
 create table t_department(

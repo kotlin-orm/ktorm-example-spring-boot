@@ -2,8 +2,8 @@
 plugins {
     id("org.springframework.boot") version "2.4.5"
     id("io.spring.dependency-management") version "0.6.0.RELEASE"
-    kotlin("jvm") version "1.4.32"
-    kotlin("plugin.spring") version "1.4.32"
+    kotlin("jvm") version "1.5.32"
+    kotlin("plugin.spring") version "1.5.32"
 }
 
 group = "org.ktorm"
@@ -12,19 +12,19 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("reflect"))
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.ktorm:ktorm-core:3.4.1")
-    implementation("org.ktorm:ktorm-jackson:3.4.1")
-    implementation("org.ktorm:ktorm-support-mysql:3.4.1")
+    implementation("org.ktorm:ktorm-core:3.5.0")
+    implementation("org.ktorm:ktorm-jackson:3.5.0")
+    implementation("org.ktorm:ktorm-support-mysql:3.5.0")
     implementation("mysql:mysql-connector-java:8.0.13")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
