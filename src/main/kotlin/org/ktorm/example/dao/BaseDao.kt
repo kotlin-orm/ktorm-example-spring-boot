@@ -84,9 +84,9 @@ abstract class BaseDao<E : Entity<E>, T : Table<E>>(private val tableObject: T) 
     }
 
     /**
-     * Return all entities in the table matching the given [predicate].
+     * Return all entities in the table.
      */
-    open fun findAll(predicate: (T) -> ColumnDeclaring<Boolean>): List<E> {
+    open fun findAll(): List<E> {
         return database.sequenceOf(tableObject).toList()
     }
 }

@@ -1,12 +1,8 @@
 package org.ktorm.example.controller
 
-import org.ktorm.database.Database
 import org.ktorm.dsl.eq
-import org.ktorm.entity.add
-import org.ktorm.entity.find
-import org.ktorm.entity.toList
+import org.ktorm.example.dao.DepartmentDao
 import org.ktorm.example.model.Department
-import org.ktorm.example.model.departments
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
@@ -19,16 +15,16 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class DepartmentController {
     @Autowired
-    lateinit var database: Database
+    lateinit var departmentDao: DepartmentDao
 
     @GetMapping("/departments/get-by-id")
     fun getDepartmentById(@RequestParam("id") id: Int): Department? {
-        return database.departments.find { it.id eq id }
+        return departmentDao.findOne { it.id eq id }
     }
 
     @GetMapping("/departments/get-all")
     fun getAllDepartments(): List<Department> {
-        return database.departments.toList()
+        return departmentDao.findAll()
     }
 
     @PostMapping("/departments/create")
@@ -39,7 +35,7 @@ class DepartmentController {
         val department = Department()
         department.name = name
         department.location = location
-        database.departments.add(department)
+        departmentDao.add(department)
         return department
     }
 }
