@@ -2,14 +2,16 @@ package org.ktorm.example.dao
 
 import org.ktorm.database.Database
 import org.ktorm.entity.*
+import org.ktorm.example.model.BaseEntity
+import org.ktorm.example.model.BaseTable
 import org.ktorm.schema.ColumnDeclaring
-import org.ktorm.schema.Table
 import org.springframework.beans.factory.annotation.Autowired
+import java.time.Instant
 
 /**
  * Created by vince on Jun 15, 2022.
  */
-abstract class BaseDao<E : Entity<E>, T : Table<E>>(private val tableObject: T) {
+abstract class BaseDao<E : BaseEntity<E>, T : BaseTable<E>>(private val tableObject: T) {
     @Autowired
     protected lateinit var database: Database
 
@@ -17,6 +19,10 @@ abstract class BaseDao<E : Entity<E>, T : Table<E>>(private val tableObject: T) 
      * Insert the given entity into the table and return the effected record number.
      */
     open fun add(entity: E): Int {
+        entity.createdBy = "admin"
+        entity.createdDate = Instant.now()
+        entity.lastModifiedBy = "admin"
+        entity.lastModifiedDate = Instant.now()
         return database.sequenceOf(tableObject).add(entity)
     }
 
@@ -24,6 +30,8 @@ abstract class BaseDao<E : Entity<E>, T : Table<E>>(private val tableObject: T) 
      * Update properties of the given entity to the table and return the effected record number.
      */
     open fun update(entity: E): Int {
+        entity.lastModifiedBy = "admin"
+        entity.lastModifiedDate = Instant.now()
         return database.sequenceOf(tableObject).update(entity)
     }
 

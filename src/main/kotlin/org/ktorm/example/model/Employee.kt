@@ -9,7 +9,7 @@ import java.time.LocalDate
 /**
  * The employee entity.
  */
-interface Employee : Entity<Employee> {
+interface Employee : BaseEntity<Employee> {
     companion object : Entity.Factory<Employee>()
 
     /**
@@ -51,7 +51,7 @@ interface Employee : Entity<Employee> {
 /**
  * The employee table object.
  */
-object Employees : Table<Employee>("t_employee") {
+object Employees : BaseTable<Employee>("t_employee") {
 
     /**
      * Employee ID.

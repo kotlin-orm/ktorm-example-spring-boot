@@ -3,14 +3,13 @@ package org.ktorm.example.model
 import org.ktorm.database.Database
 import org.ktorm.entity.Entity
 import org.ktorm.entity.sequenceOf
-import org.ktorm.schema.Table
 import org.ktorm.schema.int
 import org.ktorm.schema.varchar
 
 /**
  * The department entity.
  */
-interface Department : Entity<Department> {
+interface Department : BaseEntity<Department> {
     companion object : Entity.Factory<Department>()
 
     /**
@@ -32,7 +31,7 @@ interface Department : Entity<Department> {
 /**
  * The department table object.
  */
-object Departments : Table<Department>("t_department") {
+object Departments : BaseTable<Department>("t_department") {
 
     /**
      * Department ID.
