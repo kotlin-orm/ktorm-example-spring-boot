@@ -1,9 +1,9 @@
 
 plugins {
-    id("org.springframework.boot") version "2.4.5"
-    id("io.spring.dependency-management") version "0.6.0.RELEASE"
-    kotlin("jvm") version "1.5.32"
-    kotlin("plugin.spring") version "1.5.32"
+    id("org.springframework.boot") version "2.7.8"
+    id("io.spring.dependency-management") version "1.0.15.RELEASE"
+    kotlin("jvm") version "1.7.22"
+    kotlin("plugin.spring") version "1.7.22"
 }
 
 group = "org.ktorm"
@@ -21,15 +21,17 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.ktorm:ktorm-core:3.5.0")
-    implementation("org.ktorm:ktorm-jackson:3.5.0")
-    implementation("org.ktorm:ktorm-support-mysql:3.5.0")
+    implementation("org.ktorm:ktorm-core:3.6.0")
+    implementation("org.ktorm:ktorm-jackson:3.6.0")
+    implementation("org.ktorm:ktorm-support-mysql:3.6.0")
     implementation("mysql:mysql-connector-java:8.0.13")
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "1.8"
+tasks {
+    compileKotlin {
+        kotlinOptions {
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+            jvmTarget = "1.8"
+        }
     }
 }

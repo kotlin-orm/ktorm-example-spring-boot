@@ -24,7 +24,7 @@ class EmployeeDao : BaseDao<Employee, Employees>(Employees) {
             .drop(startIndex)
             .take(pageSize)
 
-        return PageDTO(employees.toList(), employees.totalRecords, startIndex, pageSize)
+        return PageDTO(employees.toList(), employees.totalRecordsInAllPages, startIndex, pageSize)
     }
 
     fun getAverageSalaries(): Map<Int?, Double?> {

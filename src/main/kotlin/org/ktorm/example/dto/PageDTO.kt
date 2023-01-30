@@ -5,8 +5,13 @@ package org.ktorm.example.dto
  */
 data class PageDTO<T>(
     val modelList: List<T>,
-    val totalRecords: Int,
+    val totalRecordsInAllPages: Int,
     val startIndex: Int,
     val pageSize: Int,
-    val pageCount: Int = if (totalRecords % pageSize == 0) totalRecords / pageSize else totalRecords / pageSize + 1
+    val pageCount: Int =
+        if (totalRecordsInAllPages % pageSize == 0) {
+            totalRecordsInAllPages / pageSize
+        } else {
+            totalRecordsInAllPages / pageSize + 1
+        }
 )
