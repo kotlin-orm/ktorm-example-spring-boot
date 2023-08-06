@@ -11,7 +11,6 @@ import java.time.LocalDate
  */
 @Table("t_employee")
 interface Employee : Entity<Employee> {
-    companion object : Entity.Factory<Employee>()
 
     /**
      * Employee ID.
