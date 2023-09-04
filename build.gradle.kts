@@ -1,6 +1,6 @@
 
 plugins {
-    id("org.springframework.boot") version "2.7.8"
+    id("org.springframework.boot") version "2.7.15"
     id("io.spring.dependency-management") version "1.0.15.RELEASE"
     id("com.google.devtools.ksp") version "1.9.0-1.0.13"
     kotlin("jvm") version "1.9.0"
