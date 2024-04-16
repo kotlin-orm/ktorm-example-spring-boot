@@ -5,10 +5,12 @@ import org.ktorm.entity.*
 import org.ktorm.schema.ColumnDeclaring
 import org.ktorm.schema.Table
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.context.annotation.Configuration
 
 /**
  * Created by vince on Jun 15, 2022.
  */
+@Configuration
 abstract class BaseDao<E : Entity<E>, T : Table<E>>(private val tableObject: T) {
     @Autowired
     protected lateinit var database: Database
