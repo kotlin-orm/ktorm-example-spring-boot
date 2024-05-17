@@ -24,11 +24,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("mysql:mysql-connector-java:8.0.13")
-    implementation("org.ktorm:ktorm-core:3.7.0-SNAPSHOT")
-    implementation("org.ktorm:ktorm-jackson:3.7.0-SNAPSHOT")
-    implementation("org.ktorm:ktorm-support-mysql:3.7.0-SNAPSHOT")
-    implementation("org.ktorm:ktorm-ksp-annotations:3.7.0-SNAPSHOT")
-    ksp("org.ktorm:ktorm-ksp-compiler:3.7.0-SNAPSHOT")
+    implementation("org.ktorm:ktorm-core:4.0.0")
+    implementation("org.ktorm:ktorm-jackson:4.0.0")
+    implementation("org.ktorm:ktorm-support-mysql:4.0.0")
+    implementation("org.ktorm:ktorm-ksp-annotations:4.0.0")
+    ksp("org.ktorm:ktorm-ksp-compiler:4.0.0")
 }
 
 tasks {
