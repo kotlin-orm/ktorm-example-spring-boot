@@ -1,7 +1,7 @@
 
 plugins {
-    id("org.springframework.boot") version "2.7.15"
-    id("io.spring.dependency-management") version "1.0.15.RELEASE"
+    id("org.springframework.boot") version "3.3.2"
+    id("io.spring.dependency-management") version "1.1.6"
     id("com.google.devtools.ksp") version "1.9.23-1.0.20"
     kotlin("jvm") version "1.9.23"
     kotlin("plugin.spring") version "1.9.23"
@@ -9,12 +9,9 @@ plugins {
 
 group = "org.ktorm"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
-    mavenLocal()
     mavenCentral()
-    gradlePluginPortal()
 }
 
 dependencies {
@@ -35,7 +32,6 @@ tasks {
     compileKotlin {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "1.8"
         }
     }
 }
