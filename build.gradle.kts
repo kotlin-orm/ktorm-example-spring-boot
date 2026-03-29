@@ -2,9 +2,9 @@
 plugins {
     id("org.springframework.boot") version "3.3.2"
     id("io.spring.dependency-management") version "1.1.6"
-    id("com.google.devtools.ksp") version "1.9.23-1.0.20"
-    kotlin("jvm") version "1.9.23"
-    kotlin("plugin.spring") version "1.9.23"
+    id("com.google.devtools.ksp") version "2.0.21-1.0.28"
+    kotlin("jvm") version "2.0.21"
+    kotlin("plugin.spring") version "2.0.21"
 }
 
 group = "org.ktorm"
@@ -30,7 +30,7 @@ dependencies {
 
 tasks {
     compileKotlin {
-        kotlinOptions {
+        compilerOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
         }
     }

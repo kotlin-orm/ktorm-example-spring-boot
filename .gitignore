@@ -3,6 +3,7 @@
 build/
 out/
 logs/
+.kotlin/
 .DS_Store
 
 ### STS ###
