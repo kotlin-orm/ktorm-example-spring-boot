@@ -11,11 +11,7 @@ group = "org.ktorm"
 version = "0.0.1-SNAPSHOT"
 
 repositories {
-    mavenLocal()
     mavenCentral()
-    maven {
-        url = uri("https://central.sonatype.com/repository/maven-snapshots/")
-    }
 }
 
 dependencies {
@@ -25,11 +21,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("mysql:mysql-connector-java:8.0.13")
-    implementation("org.ktorm:ktorm-core:4.2.0-SNAPSHOT")
-    implementation("org.ktorm:ktorm-jackson:4.2.0-SNAPSHOT")
-    implementation("org.ktorm:ktorm-support-mysql:4.2.0-SNAPSHOT")
-    implementation("org.ktorm:ktorm-ksp-annotations:4.2.0-SNAPSHOT")
-    ksp("org.ktorm:ktorm-ksp-compiler:4.2.0-SNAPSHOT")
+    implementation("org.ktorm:ktorm-core:4.2.0")
+    implementation("org.ktorm:ktorm-jackson:4.2.0")
+    implementation("org.ktorm:ktorm-support-mysql:4.2.0")
+    implementation("org.ktorm:ktorm-ksp-annotations:4.2.0")
+    ksp("org.ktorm:ktorm-ksp-compiler:4.2.0")
 }
 
 tasks {
@@ -38,4 +34,8 @@ tasks {
             freeCompilerArgs = listOf("-Xjsr305=strict")
         }
     }
+}
+
+ksp {
+    arg("ktorm.dbNamingStrategy", "lower-snake-case")
 }
